@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.button {
+    border: 0;
+    color: #fff;
+    font-size: 11px;
+    line-height: 24px;
+    text-shadow: 0 1px 0 rgba(0,0,0,.2);
+    cursor: pointer;
+    padding: 0 10px 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff4d), to(#fff0));
+    background-image: -webkit-linear-gradient(top, #ffffff4d, #fff0);
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+    background-image: -ms-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+    background-image: linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+}
+
+.typeFile.typeFile + input[type=file] { visibility: hidden; opacity: 0; width:0; height: 0; overflow: hidden; }
+
+.button-copyhtml {
+    background-color: #269CE9;
+    border-color: #269CE9;
+}
+
+.button-copyimage {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}

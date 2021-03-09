@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import "./common/_styles.css";
+
+.view-function {
+    position: fixed;
+    top: 7px;
+    left: 10px;
+    z-index: 9999;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.view-markdown {
+    margin: 80px auto 40px;
+    max-width: 980px;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+}
+
+.view-markdown__content {
+    padding: 15px 30px;
+}
+
+.view-markdown__title {
+    background-color: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin: -1px -1px 0;
+    padding: 8px 16px;
+}
+
+
+
+/*
+    Vendor Reset
+*/
+.jq-toast-single h2 { border: 0; }

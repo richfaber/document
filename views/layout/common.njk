@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>{% block headtitle %}{% endblock %} || Markdown Puslish</title>
+    {% include "./include.resource.njk" %}
+    {% block headresource %}{% endblock %}
+</head>
+
+<body>
+
+<div class="document-content" id="documentContent">
+    {% block content %}
+        This is the default content
+    {% endblock %}
+</div>
+
+<div class="document-script" id="documentScript">
+    {% block script %}
+        마크다운 영역
+    {% endblock %}
+</div>
+
+</body>
+</html>

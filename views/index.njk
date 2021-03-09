@@ -1,0 +1,97 @@
+{% extends "layout/common.njk" %}
+
+{% block headtitle %}Index{% endblock %}
+
+{% block headresource %}
+    <script type="text/javascript" src="/vendor/jquery-toast-plugin-master/dist/jquery.toast.min.js"></script>
+    <link rel="stylesheet" href="/vendor/jquery-toast-plugin-master/dist/jquery.toast.min.css">
+
+    <link rel="stylesheet" href="/resources/css/index.css" />
+{% endblock %}
+
+{% block content %}
+
+    <div class="document-index">
+
+        <div class="document-tree" id="documentTree">
+            <h2 class="document-tree__title">마크다운 목록</h2>
+            <div class="triangle-l"></div><div class="triangle-r"></div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+$(function() {
+
+    function recursiveCreateTree( item, ROOT ) {
+
+        var markup = "<ul>";
+        item.children.forEach(function( item ) {
+
+            var NAME = item.name,
+                PATH = item.path;
+
+            PATH = PATH.replace(new RegExp( ROOT.split('/').join('\\/'), 'g'), '/view');
+            if(item.type == 'directory') {
+
+                markup += '<li><button type="button" class="dir"><i class="fa fa-folder-o"></i>' + NAME + '</button>';
+                markup += recursiveCreateTree( item, ROOT );
+                markup += '</li>';
+
+            } else {
+
+                markup += ('<li><a href="' + PATH + '" class="link" target="blank"><span class="fa fa-file-text-o"></span>' + NAME + '</a></li>');
+
+            }
+
+        });
+
+        markup += '</ul>';
+        return markup;
+
+    }
+
+    function treeView( selector ) {
+
+        var $selectTree = $( selector ),
+            $buttons = $selectTree.find('button.dir');
+
+        function init() {
+
+            $buttons.on("click", toggleList);
+
+        }
+
+        function toggleList(e) {
+
+            var $self = $(this),
+                $parent = $self.closest('li');
+
+            $parent.toggleClass('active');
+
+        }
+
+        return {
+            init: init
+        }
+
+    }
+
+    $.get('/API/document/tree').done(function(res) {
+
+        var tree = res,
+            ROOT = res.path,
+            markup;
+
+        markup = recursiveCreateTree( tree, ROOT );
+        $('#documentTree').append( markup );
+
+        treeView( '#documentTree' ).init();
+
+    });
+});
+</script>
+{% endblock %}

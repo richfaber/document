@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "./common/_styles.css";
+
+.editor-simplemde { margin: 80px 40px 20px; }
+
+.edit-function {
+    position: fixed;
+    top: 7px;
+    left: 10px;
+    z-index: 9999;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.edit-function .button {
+    float: left;
+}
