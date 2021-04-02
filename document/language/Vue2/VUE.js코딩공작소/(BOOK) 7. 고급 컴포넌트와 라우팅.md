@@ -206,9 +206,11 @@
 
 `middle, final` 슬롯을 추가하고, 컴포넌트 삽입시에 `<slot name="middle">, <slot name="final">` 을 지정했더니 해당 영역에 정확히 표현되고 있다.
 
-그럼 `<h1>{{ header }}</h1>` 는 이름을 지정하지 않았는데, 지정을 하지 않았을 경우 `<slot name="default"></slot>` 에 자동으로 삽입되게 되고, `<slot></slot>` 은 `name` 이 생략된 슬롯이라고 생각하면 된다. 
+여기서 살펴볼 것이 마크업 영역의 `<h1>{{ header }}</h1>` 는 슬롯 이름을 지정하지 않았는데, 지정을 하지 않았을 경우 `<slot></slot>` 에 자동으로 삽입되게 된다.
 
-개인적으로 명시된 것을 선호하는 편이여서 `<slot></slot>` 대신 `<slot name="default"></slot>` 라고 명시해서 코딩하는 편이다.
+참고로 `<slot></slot>` 은 `name=default` 가 생략된 슬롯이다. 
+
+개인적으로 명시된 것을 선호하기 때문에 `<slot></slot>` 대신 `<slot name="default"></slot>` 라고 명시해서 코딩하는 편이다.
 
 
 ## 범위 슬롯
