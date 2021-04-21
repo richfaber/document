@@ -4,17 +4,17 @@
 
 ## 슬롯 사용
 
-컴포넌트 사용 시 해당 컴포넌트 안에 컨텐츠를 넣고 싶을 때가 있다.
+컴포넌트 사용 시 해당 컴포넌트 안의 템플릿 내용을 외부에서 조작하고 싶을 때가 있다.
 
 예를 들어
 
 ```html
 <my-component>
-  이 내부에 내가 필요로 하는 태그를 사용할 수 없다.
+  이 내부에는 내가 원하는 태그를 사용할 수 없고, 해당 컴포넌트에 등록된 template 로 치환된다.
 </my-component>
 ```
 
-위와 같은 컴포넌트 내부에 무엇인가를 추가하고 싶을 때 `slot` 을 사용한다.
+위와 같이 컴포넌트 내부에 템플릿을 변경하고 싶을 때 `slot` 을 사용한다.
 
 아래 예제는 간단한 `my-component` 예제이다.
 
@@ -32,7 +32,7 @@
       <my-component 
         :author="authorLabel"
         :title="titleLabel"
-      ></my-component>
+      >안에 있는 내용은 컴포넌트에 선언된 템플릿으로 대체되므로, 의미가 없다.</my-component>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
@@ -72,7 +72,7 @@
 </html>
 ```
 
-여기에 `slot` 을 적용해 보자.
+위와같이 컴포넌트에 선언된 템플릿을 조작할 수 없지만, `slot` 을 사용하면 가능해 진다.
 
 ```html
 <!DOCTYPE html>
@@ -169,7 +169,7 @@
     <script type="text/javascript">
     
       const MyComponent = {
-        props: ['myInfo'],
+        props: ['title', 'author'],
         template: `
           <div>
             <form>
@@ -182,8 +182,7 @@
               <slot name="final"></slot>
             </form>
           </div>
-        `,
-        props: ['title', 'author']
+        `
       };
 
       new Vue({
@@ -216,7 +215,7 @@
 
 ## 범위 슬롯
 
-`slot` 처럼 `template` 안에 `slot name=naming` 을 넣고, `vue-template` 에서 해당영역의 `slot=namming` 을 지정하여, 치환하게 만드는 것과 같은 용도이지만, 데이터를 전달할 수 있는 다른 형태도 제공한다.
+위와 같은 `slot` 의 사용은, 해당 `slot` 으로 
 
 그것이 `범위 슬롯` 이다.
 
