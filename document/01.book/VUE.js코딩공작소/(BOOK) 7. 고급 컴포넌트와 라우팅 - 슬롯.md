@@ -1,6 +1,6 @@
 [![9791158390754](http://image.yes24.com/goods/78872554/800x0) Vue.js 코딩공작소](http://www.yes24.com/Product/Goods/78872554)
 
-# (BOOK) 7장 고급 컴포넌트와 라우팅
+# (BOOK) 7장 고급 컴포넌트와 라우팅 - 슬롯
 
 ## 슬롯 사용
 
@@ -61,11 +61,14 @@
         },
 
         data() {
+
           return {
             titleLabel: '제목:',
             authorLabel: '저자:'
           }
+
         }
+        
       })
     </script>
   </body>
@@ -215,7 +218,179 @@
 
 ## 범위 슬롯
 
-`slot` 이 지정되어 있는 컴포넌트를 사용할 때, 부모의 데이터를 `slot-scope` 를 통해서 자식컴포넌트 에게 전달할 수 있다.
+지금까지는 `slot` 을 이용해서 태그를 치환했다면, `slot` 에 데이터연동 부분을 보자.
 
-아래 예제를 통해서 확인하자.
+부모컴포넌트의 데이터를 활용하는 방법은 쉽다.
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <book-component>
+
+        <template slot="haha">
+            <h3>{{ header }}</h3>
+            <div v-for="book in books">{{ book.title }}</div>
+        </template>
+
+      </book-component>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <style>
+    </style>
+
+    <script type="text/javascript">
+    
+      const bookComponent = {
+        
+        template: `
+          <div title="컴포넌트의 루트 요소(element)는 반드시 1개여야 한다.">
+            <slot name="haha"></slot>
+            <p>bookComponent 내부데이터: {{ childData }}</p>
+          </div>
+        `,
+        data() {
+
+          return {
+            childData: '안녕?'
+          }
+
+        }
+          
+      };
+
+      new Vue({
+        el: '#app',
+        components: {
+          'book-component': bookComponent
+        },
+
+        data() {
+
+          return {
+
+            header: '책 목록 - 컴포넌트 안의 태그의 유효범위는 컴포넌트속이 아니라, 부모이다.',
+
+            books: [
+              { author: 'John Smith', title: 'Best of Times'},
+              { author: 'John Doe', title: 'Go West Young Man'},
+              { author: 'Avery Katz', title: 'The Life And Times Of Avery'}
+            ]
+
+          }
+
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+위와 같이 `<h3>{{ header }}</h3>, book in books` 처럼 부모데이터 있는 그대로 사용하면 된다.
+
+그대로 사용하면 되기 때문에, 특별히 `부모 데이터 -> 자식 데이터` 흘려보낼 필요성이 없어 보인다.
+
+반대로 `자식 데이터 -> 부모 데이터` 를 해보자.
+
+
+> 자식컴포넌트의 데이터를 부모에서 활용하는 것이다!
+> (반복) 자식컴포넌트의 데이터를 부모에서 활용하는 것이다!
+> (또) 자식컴포넌트의 데이터를 부모에서 활용하는 것이다!
+
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <book-component>
+
+        <template slot="haha" slot-scope="scopeProps">
+            <h3>{{ header }}</h3>
+            <div v-for="book in books">{{ book.title }}</div>
+            <p>자식데이터 : {{ scopeProps.sendParam }}</p>
+            <p>자식데이터 : {{ scopeProps.sendParam2 }}</p>
+        </template>
+
+      </book-component>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <style>
+    </style>
+
+    <script type="text/javascript">
+    
+      const bookComponent = {
+
+        template: `
+          <div title="컴포넌트의 루트 요소(element)는 반드시 1개여야 한다.">
+
+            <slot name="haha" :sendParam="IamGroot" :sendParam2="childData"></slot>
+            <p>bookComponent 내부데이터: {{ childData }}</p>
+            
+          </div>
+        `,
+        data() {
+
+          return {
+            childData: '안녕?',
+            IamGroot: {
+              type: '나무',
+              hair: '양배추'
+            }
+          }
+
+        }
+          
+      };
+
+      new Vue({
+        el: '#app',
+        components: {
+          'book-component': bookComponent
+        },
+
+        data() {
+
+          return {
+
+            header: '책 목록 - 컴포넌트 안의 태그의 유효범위는 컴포넌트속이 아니라, 부모이다.',
+
+            books: [
+              { author: 'John Smith', title: 'Best of Times'},
+              { author: 'John Doe', title: 'Go West Young Man'},
+              { author: 'Avery Katz', title: 'The Life And Times Of Avery'}
+            ]
+
+          }
+
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+여기서 `slot-scope` 가 나온다.
+
+`자식의 slot` 에서 `:property="내부데이터"` 를 줄줄이 선언하고, 부모 에서는 `slot-scope="임의의변수명"` 을 지정하여 `자식의 slot 의 연결된 모든 property` 들을 참조하는 형태 이다.
 
