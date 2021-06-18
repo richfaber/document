@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        {{ speaks }}
+      <doggie :size.sync="speaks" />
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <style>
+    </style>
+
+    <script type="text/javascript">
+    
+      const doggie = {
+          props: ['size'],
+        template: `
+          <div>
+        
+            <input :value="size" @input="$emit('update:size', $event.target.value)" />
+
+          </div>
+        `
+      };
+
+      new Vue({
+        el: '#app',
+        components: {
+          'doggie': doggie
+        },
+
+        data() {
+          return {
+
+            speaks: 'bark!'
+
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

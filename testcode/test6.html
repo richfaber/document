@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">    
+      <p v-highlight="'green'">디렉티브</p>
+      <p v-highlight:background="'gold'">디렉티브</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <style>
+    </style>
+
+    <script type="text/javascript">
+    
+      Vue.directive('highlight', {
+
+        bind(el, binding, vnode, oldNode) {
+
+          if (binding.arg == 'background') {
+
+            el.style.backgroundColor = binding.value;
+
+          } else {
+
+            el.style.color = binding.value;
+
+          }
+
+        }
+
+      });
+      new Vue({
+        el: '#app',
+        myOption: 'hello!',
+        mounted() {
+          console.log( '구동되었다.' );
+        }
+
+      })
+    </script>
+  
+  </body>
+</html>

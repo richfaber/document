@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <book-component>
+
+        <template slot="haha" slot-scope="scopeProps">
+            <h3>{{ header }}</h3>
+            <div v-for="book in books">{{ book.title }}</div>
+            <p>자식데이터 : {{ scopeProps.sendParam }}</p>
+            <p>자식데이터 : {{ scopeProps.sendParam2 }}</p>
+        </template>
+
+      </book-component>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <style>
+    </style>
+
+    <script type="text/javascript">
+    
+      const bookComponent = {
+
+        template: `
+          <div title="컴포넌트의 루트 요소(element)는 반드시 1개여야 한다.">
+
+            <slot name="haha" :sendParam="IamGroot" :sendParam2="childData"></slot>
+            <p>bookComponent 내부데이터: {{ childData }}</p>
+            
+          </div>
+        `,
+        data() {
+
+          return {
+            childData: '안녕?',
+            IamGroot: {
+              type: '나무',
+              hair: '양배추'
+            }
+          }
+
+        }
+          
+      };
+
+      new Vue({
+        el: '#app',
+        components: {
+          'book-component': bookComponent
+        },
+
+        data() {
+
+          return {
+
+            header: '책 목록 - 컴포넌트 안의 태그의 유효범위는 컴포넌트속이 아니라, 부모이다.',
+
+            books: [
+              { author: 'John Smith', title: 'Best of Times'},
+              { author: 'John Doe', title: 'Go West Young Man'},
+              { author: 'Avery Katz', title: 'The Life And Times Of Avery'}
+            ]
+
+          }
+
+        }
+      })
+    </script>
+  </body>
+</html>
