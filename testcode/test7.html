@@ -9,8 +9,8 @@
   <body>
     <div id="app">
 
-      <child-component :text="sendData"></child-component>
-      
+      <child-component v-model="sendData"></child-component>
+
       <p>부모데이터 : {{ sendData }}</p>
 
     </div>
@@ -24,10 +24,25 @@
       const ChildComponent = {
         template: `
             <div>
-                <p>자식데이터: <input type="text" v-model="text" /></p>
+                <p>자식데이터: <input type="text" v-model="childmodel" /></p>
             </div>
         `,
-        props: ['text']
+        props: ['value'],
+        computed: {
+            'childmodel': {
+
+                get() {
+                    return this.value;
+                },
+
+                set( val ) {
+                    this.$emit('input', val);
+                }
+
+            }
+        },
+        methods: {
+        }
       }
 
       new Vue({
@@ -45,6 +60,7 @@
 
         },
         methods: {
+
         }
 
       })
