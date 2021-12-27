@@ -247,9 +247,9 @@ project name> npx cap init
 [success] capacitor.config.ts created!
 ```
 
-성공 후 `capacitor.config.ts` 생성이 된다. 
+성공 후 `capacitor.config.ts` 생성이 된다.
 
-이 파일의 `webDir` 은 nuxt 빌드 시 생성되는 폴더와 일치해야 한다. 
+이 파일의 `webDir` 은 nuxt 빌드 시 생성되는 폴더와 일치해야 한다.
 
 ```typescript
 import { CapacitorConfig } from '@capacitor/cli';
@@ -280,12 +280,8 @@ projectname> npx cap sync android
 이제 `generate` 명령어로 `dist` 폴더에 빌드파일을 생성한다. 
 
 ```shell
-project name> npm run build
 project name> npm run generate
 ```
-
-?? build 후에 geratate 해야 작동했던거 같은데..?
-?? spa: false 로 generate 하면 경로들 다 망가지는 것 같았는데..?
 
 `dist` 폴더가 생성되면 이제 웹에 작성된 웹자원 들을 디바이스로 복사 해야 한다.
 
@@ -293,7 +289,7 @@ project name> npm run generate
 project name> npx cap copy
 ```
 
-실행하면 적절한 위치에 andoid ios에 복사한다.
+실행하면 적절한 위치에 [andoid || ios] 에 복사한다.
 
 마지막 단계이다. 안드로이드 스튜디오에서 프로젝트를 열어보자
 
@@ -303,9 +299,9 @@ project name> npx cap open android
 
 안드로이드 스튜디오 프로그램이 열리고, `자동으로 gradle 빌드 성공` 후에 `avd 로 디바이스` 를 실행 시켰을 때, 문제없이 실행된다.
 
-- adb 추가하기
+### 앱빌드 정리
 
-앱을 빌드하기 위한 최종 워크플로는 다음과 같습니다.
+앱을 빌드하기 위한 최종 워크플로는 다음과 같다.
 
 1. `npm run generate` `dist` 에 소스 빌드
 2. `npx cap copy` 빌드된 앱을 iOS 및 Android 작업 공간에 복사
@@ -314,5 +310,4 @@ project name> npx cap open android
 이후 `adb 로 디바이스 추가하고 실행하는법` 이나, `자신의 스마트폰으로 디버깅` 하는 방법들이 추가로 필요했는데, 이 부분은 링크로 대체한다.
 
 - [하드웨어 기기에서 앱 실행](https://developer.android.com/studio/run/device?hl=ko)
-- []()
 - [https://kibua20.tistory.com/165](https://kibua20.tistory.com/165)
