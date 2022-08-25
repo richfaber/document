@@ -1,7 +1,3 @@
-# CSS Grid 사용하기
-
-![](https://usefulpa.s3.amazonaws.com/images/2017/grid-layouts-examples-2.png)
-
 @참조 : 
 - http://www.usefulparadigm.com/2017/03/31/a-few-ways-to-make-a-grid-layout/
 - https://hackernoon.com/the-ultimate-css-battle-grid-vs-flexbox-d40da0449faf
@@ -14,17 +10,6 @@
 현재의 레이아웃 구현방식은 `block element` 에 높이나 너비를 조정하고, `float` 나 `position` 을 통해서 해당요소를 배치하는 형태이다.
 
 `grid` 는 `flex` 와 성격이 비슷한 부분이 있기 때문에, 비교대상이 된다.
-
-## 호환성
-
-대부분의 새로운 스펙들은 모바일에서는 빠르게 받아들이기 때문에, 데스크탑 OS를 살펴보면 최소지원 범위를 알기 쉽다.
-
-[![](https://lh3.googleusercontent.com/DL-TnPY8WZ3XqVAE7hzauXDEM9mtFC6O50bmo3HZtzEWXq5CfhuhRgzTmzOyuDZFiNWHcModjUtDl6KLeCS0YVFIe6Jd0B7-NDv8tUhcY4d39IqaPc1XC4HC5QDqAMhWy0UpTv10LPxeL89jes2qu37Hu7Joa8RXxgoHEMpAXm6Vdz-EpSNwVUBrR6Ft75wafZndXZ1rvoLrDIZATtnm3tvPfdVlYBZ6NprhSkLRnWXfTQePUHOqeGQxa5Eei7kDclkgH9XotQCoGiH_WNQe6lDDB8r94ghNKY9NkMBKXKr3FqbiA6oVLI_V0F1aLLWVVv_RsT8vlJGKNsbPqBWhoYv6g7p667xd353jYVLsCAje9q9ygEXhbuxqZnOGWV2JHYkXzemIWFnMjxszKaCHmpdb3a5Wkn0p4S5xVy8JIlvSaor9dcao3J8xcKpPhpYYx7pDxGnF7d9FeuY9pm-wgHfIkSBo2bDwIj6Ykw1Azx0Mo-HHh4BzadN9AmW_1mCfpUxJ1jh2C87GatcyQUBwkLsCMzZSuWs3U81UyD9IqPcdQtVwMFRdHO_yp-057GkhCy8ojm9UT7U6NH_tYA6jNHVp5UVi54LDaRh88P_g4z0szHshFlJPDdfVbCFtOEnGDxVyVaQRiXCy328c0M5RIQ9dzLToPEb_=w1974-h1164-no)](https://caniuse.com/#search=grid)
-
-매번 문제가 되는 IE10 도 지원을 하고 있다.(-ms- 프리픽스를 붙여야 동작함.)
-보니 안드로이드도 4버전(아이스크림 샌드위치), 오페라, 블랙베리, 바이두, QQ 등의 브라우저는 지원이 안되는 것으로 확인이 된다.
-
-개발의 사양으로 해당브라우저가 포함되어 있다면, 고려해 보아야 한다.
 
 ## `grid` 와 `flex`
 

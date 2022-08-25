@@ -107,7 +107,7 @@ npx 는 `node` 설치 시에 `npm` 과 같이 설치되는 응용프로그램이
 nuxt 프로젝트 기본환경설치를 위해서 npx를 이용한다.
 
 ```shell
-> npx create-nuxt-app <project-name>
+$ npx create-nuxt-app <project-name>
 ? Project name: <project-name>
 ? Programming language: JavaScript
 ? Package manager: Npm
@@ -140,20 +140,20 @@ nuxt 프로젝트 기본환경설치를 위해서 npx를 이용한다.
 웹팩버전은 4버전으로 맞춘다.
 
 ```shell
-project name> npm uninstall webpack
-project name> npm install --save-dev webpack@4.46.0
+project-name$ npm uninstall webpack
+project-name$ npm install --save-dev webpack@4.46.0
 ```
 
 sass 사용자라면 sass 추가해 준다.
 
 ```shell
-project name> npm install --save-dev node-sass sass-loader
+project-name$ npm install --save-dev node-sass sass-loader
 ```
 
 이제 빌드를 실행해 보자
 
 ```shell
-project name> npm run build
+project-name$ npm run build
 > projectname@1.0.0 build
 > nuxt build
 
@@ -226,7 +226,7 @@ i Ready to run nuxt start
 해당 프로젝트 폴더로 이동 후에 패키지를 추가해 준다.
 
 ```shell
-project name> npm install --save-dev @capacitor/core @capacitor/cli @capacitor/ios @capacitor/android
+project-name$ npm install --save-dev @capacitor/core @capacitor/cli @capacitor/ios @capacitor/android
 ```
 
 ### CapacitorJS 초기화
@@ -238,7 +238,7 @@ Capacitor 초기화를 진행한다. 여기서 `Package ID` 는 구글스토어�
 Web asset directory 는 `dist` 로 설정한다.
 
 ```shell
-project name> npx cap init
+project-name$ npx cap init
 √ Package ID ... <Package ID>
 [?] What is the web asset directory for your app?
     This directory should contain the final index.html of your app.
@@ -267,26 +267,26 @@ export default config;
 `ios, android` 플랫폼을 추가한다
 
 ```shell
-project name> npx cap add ios
-project name> npx cap add android
+project-name$ npx cap add ios
+project-name$ npx cap add android
 ```
 
 그리고 `gradle` 연관설정 들을 생성하기 위해서 `sync` 를 진행한다.
 
 ```shell
-projectname> npx cap sync android
+project-name$ npx cap sync android
 ```
 
 이제 `generate` 명령어로 `dist` 폴더에 빌드파일을 생성한다. 
 
 ```shell
-project name> npm run generate
+project-name$ npm run generate
 ```
 
 `dist` 폴더가 생성되면 이제 웹에 작성된 웹자원 들을 디바이스로 복사 해야 한다.
 
 ```shell
-project name> npx cap copy
+project-name$ npx cap copy
 ```
 
 실행하면 적절한 위치에 [andoid || ios] 에 복사한다.
@@ -294,7 +294,7 @@ project name> npx cap copy
 마지막 단계이다. 안드로이드 스튜디오에서 프로젝트를 열어보자
 
 ```shell
-project name> npx cap open android
+project-name$ npx cap open android
 ```
 
 안드로이드 스튜디오 프로그램이 열리고, `자동으로 gradle 빌드 성공` 후에 `avd 로 디바이스` 를 실행 시켰을 때, 문제없이 실행된다.
