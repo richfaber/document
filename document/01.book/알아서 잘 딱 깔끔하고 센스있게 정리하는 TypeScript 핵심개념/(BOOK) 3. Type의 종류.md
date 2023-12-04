@@ -1,7 +1,7 @@
 # 알아서 잘 딱 깔끔하고 센스있게 정리하는 TypeScript 핵심개념
 
 - @refer
-  https://bumlog.notion.site/Notion-PDF-QR-da0cb7a053e343cc942840a589f26f0b
+  - https://bumlog.notion.site/Notion-PDF-QR-da0cb7a053e343cc942840a589f26f0b
 
 ## Type의 종류
 
