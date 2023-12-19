@@ -1,0 +1,155 @@
+{
+  "main": {
+    "id": "c9437d253c860fb6",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c0ac4d362552e14",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "79c27db023b7f996",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01.book/모던 리액트 Deep Dive/Hook.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8bcb6b8fe90fc60b",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c3cdc442b2f4f8f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7b8f0552dedfbf1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d852068e3ee0847e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "04f038f6d7d421a7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 253.5
+  },
+  "right": {
+    "id": "8490ec1b220cad11",
+    "type": "split",
+    "children": [
+      {
+        "id": "c9478f4914487b8d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ec65fb5fd5722c65",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01.book/모던 리액트 Deep Dive/Hook.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4e9c10d19a5a6489",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01.book/모던 리액트 Deep Dive/Hook.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "fd2d9c53f849717d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "529888a8744c909e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01.book/모던 리액트 Deep Dive/Hook.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "workspaces:작업 공간 레이아웃 관리": false,
+      "publish:변경사항 출판": false
+    }
+  },
+  "active": "79c27db023b7f996",
+  "lastOpenFiles": [
+    "01.book/모던 리액트 Deep Dive/Hook.md",
+    "01.book/모던 리액트 Deep Dive"
+  ]
+}
