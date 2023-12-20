@@ -5,5 +5,6 @@
 - useCallback
 - useRef
 - useContext
+- useReducer
 
 뭐지 안되네..
