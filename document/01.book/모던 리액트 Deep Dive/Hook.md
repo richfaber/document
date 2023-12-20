@@ -6,5 +6,6 @@
 - useRef
 - useContext
 - useReducer
+- useImperativeHandle
 
 뭐지 안되네..
