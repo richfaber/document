@@ -32,3 +32,6 @@
 
 - useSWR
 - react query
+
+
+- Redux / Mobx
