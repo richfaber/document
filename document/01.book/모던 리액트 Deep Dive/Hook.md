@@ -1,4 +1,6 @@
 
+## 리액트 훅
+
 - useContext: 공용 props 주입
 
 - useState
@@ -13,10 +15,12 @@
 - useMemo: 갱신제한 (기대값기준)
 - ?useCallback: 갱신제한 (콜백기준)
 
+- useLayoutEffect
 - useDebugValue
+- 커스텀 훅 만들기
 
 
-라우터 훅
+## 라우터 훅
 
 <Link />
 <NavLink />
@@ -28,10 +32,8 @@
 - useNavigate
 
 
-기타
+## 기타
 
 - useSWR
-- react query
-
-
+- React Query
 - Redux / Mobx
