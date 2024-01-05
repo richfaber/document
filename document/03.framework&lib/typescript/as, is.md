@@ -3,6 +3,13 @@
 
 컴파일 단계의 타입검사 시 컴파일러가 감지하지 못하는 애매한 타입 요소를 직접 명시하는 것
 
+```typescript
+const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+
+// or
+
+const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
 ```
-const myCanvas = document.getElementById("main_canvas")
-```
+
+# is
+
