@@ -13,3 +13,4 @@ const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
 
 # is
 
+타입가드 역할을 하고, 함수가 호출될 때
