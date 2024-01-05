@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03.framework&lib/react/Hook.md",
+                "file": "03.framework&lib/typescript/as, is.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03.framework&lib/react/Hook.md",
+                "file": "03.framework&lib/typescript/as, is.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03.framework&lib/react/Hook.md",
+                "file": "03.framework&lib/typescript/as, is.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03.framework&lib/react/Hook.md"
+                "file": "03.framework&lib/typescript/as, is.md"
               }
             }
           }
@@ -147,10 +147,12 @@
       "publish:변경사항 출판": false
     }
   },
-  "active": "e7b8f0552dedfbf1",
+  "active": "79c27db023b7f996",
   "lastOpenFiles": [
-    "03.framework&lib/react",
     "03.framework&lib/react/Hook.md",
+    "03.framework&lib/typescript/as, is.md",
+    "03.framework&lib/typescript",
+    "03.framework&lib/react",
     "01.book/모던 리액트 Deep Dive"
   ]
 }
