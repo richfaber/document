@@ -15,7 +15,6 @@
 - useMemo: 갱신제한 (기대값기준)
 - useCallback: 갱신제한 (콜백기준)
 
-- useLayoutEffect
 - useDebugValue
 
 - 커스텀 훅 만들기
