@@ -1,0 +1,2 @@
+- 예제: https://github.com/nakjasabal/react-developer-starter
+- pdf: https://drive.google.com/file/d/1BnpCs4uZA5VYR9Q4P7LiFNyvMKOlV_lW/view?usp=drivesdk
